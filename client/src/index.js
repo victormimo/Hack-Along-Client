@@ -5,10 +5,10 @@ import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import * as reducers from "./reducers";
+import reducers from "./reducers";
 import thunk from "redux-thunk";
 
-const store = createStore(() => [], {}, applyMiddleware(thunk));
+const store = createStore(reducers, {}, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
